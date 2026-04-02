@@ -7,6 +7,7 @@ Author: AI Assistant
 Date: 2024
 """
 
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,7 +19,7 @@ from collections import Counter
 import warnings
 warnings.filterwarnings('ignore')
 
-# NLP and ML libraries
+
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -31,7 +32,7 @@ import joblib
 
 print("Starting Humor Detection Model Training...")
 
-# Download required NLTK data
+
 print("Downloading NLTK data...")
 try:
     nltk.data.find('tokenizers/punkt')
@@ -51,7 +52,7 @@ print("\n" + "=" * 60)
 print("HUMOR DETECTION NLP MODEL - SIMPLIFIED VERSION")
 print("=" * 60)
 
-# Step 1: Load and Explore Data
+
 print("\n1. LOADING AND EXPLORING DATA")
 print("-" * 40)
 
@@ -72,17 +73,16 @@ except Exception as e:
     print(f"ERROR Error loading dataset: {e}")
     exit(1)
 
-# Step 2: Data Cleaning and Preprocessing
+
 print("\n2. DATA CLEANING AND PREPROCESSING")
 print("-" * 40)
 
 def clean_text(text):
     """Clean text by removing URLs, punctuation, converting to lowercase, and removing stopwords."""
     try:
-        # Convert to string if not already
+        
         text = str(text)
         
-        # Remove URLs
         text = re.sub(r'http\S+|www\S+|https\S+', '', text, flags=re.MULTILINE)
         
         # Remove user mentions and hashtags
